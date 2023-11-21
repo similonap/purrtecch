@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 const Post = () => {
     const router = useRouter();
     const id = parseInt(router.query.id as string);
-    let post = posts.find(post => post.id === id)
+    let post = posts.find(post => post.id === id)!;
 
     return (
         <div>
