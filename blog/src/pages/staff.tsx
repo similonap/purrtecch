@@ -1,9 +1,22 @@
-import { posts, staff } from '@/data';
-import Link from 'next/link';
+import { type Staff, getStaff } from "@/api/staff"
+import { GetStaticProps } from "next";
 import { useRouter } from 'next/router';
 import React from 'react';
 
-const Staff = () => {
+interface StaffProps {
+    staff: Staff[]
+}
+
+export const getStaticProps : GetStaticProps<StaffProps> = async() => {
+    let staff = await getStaff();
+    return {
+        props: {
+            staff: staff
+        }
+    }
+}
+
+const Staff = ({staff} : StaffProps) => {
     const router = useRouter();
     return (
         <section className="bg-white">

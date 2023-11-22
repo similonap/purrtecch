@@ -1,8 +1,21 @@
-import { posts } from '@/data';
+import { getPosts, type Post } from '@/api/posts';
+import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
-const Post = () => {
+interface PostsProps {
+    posts: Post[]
+}
 
+export const getStaticProps: GetStaticProps<PostsProps> = async () => {
+    let posts = await getPosts();
+    return {
+        props: {
+            posts: posts
+        }
+    }
+}
+
+const Posts = ({posts} : PostsProps) => {
     return (
         <div>
             <article>
@@ -20,4 +33,4 @@ const Post = () => {
     );
 }
 
-export default Post;
+export default Posts;

@@ -1,7 +1,21 @@
-import { about } from '@/data';
+import { CampusInfo, getCampusInfo } from '@/api/campusInfo';
+import { GetStaticProps } from 'next';
 import React from 'react';
 
-const About = () => {
+interface AboutProps {
+    campusInfo: CampusInfo[]
+}
+
+export const getStaticProps: GetStaticProps<AboutProps> = async () => {
+    let campusInfo = await getCampusInfo();
+    return {
+        props: {
+            campusInfo: campusInfo
+        }
+    }
+}
+
+const About = ({ campusInfo }: AboutProps) => {
 
     return (
         <div>
@@ -16,21 +30,17 @@ const About = () => {
                 </div>
             </div>
 
-            {about.map((line, index) => (
+            {campusInfo.map((line, index) => (
                 <div className="w-full rounded overflow-hidden shadow-lg text-black border-gray border-2 mt-10">
-                <img src={line.cover} className="w-full object-cover" />
-                <div className="p-10">
-                    <h2 className="text-2xl font-bold mb-4 text-black">{line.title}</h2>
-                    <p className="text-black text-lg">
-                        {line.text}
-                    </p>
+                    <img src={line.cover} className="w-full object-cover" />
+                    <div className="p-10">
+                        <h2 className="text-2xl font-bold mb-4 text-black">{line.title}</h2>
+                        <p className="text-black text-lg">
+                            {line.text}
+                        </p>
+                    </div>
                 </div>
-            </div>
             ))}
-            
-
-  
-
         </div>
     );
 }

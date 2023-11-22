@@ -1,9 +1,23 @@
-import { posts } from '@/data';
+import { type Post, getPosts } from '@/api/posts';
+import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-const Home = () => {
+export const getStaticProps : GetStaticProps<HomeProps> = async() => { 
+  let posts = await getPosts();
+  return {
+    props: {
+      posts: posts
+    }
+  }
+}
+
+interface HomeProps {
+  posts: Post[]
+}
+
+const Home = ({posts} : HomeProps) => {
   const router = useRouter();
 
   return (
@@ -25,7 +39,7 @@ const Home = () => {
             <img src={post.image} alt={post.title} className="w-full object-cover" />
             <div className="p-4">
               <h2 className="text-xl font-bold">{post.title}</h2>
-              <p>{post.excerpt}</p>
+              <p>{post.short}</p>
               <button className="bg-blue-500 text-white rounded px-4 py-2 mt-2" onClick={() => router.push("/posts/" + post.id)}>Read More</button>
             </div>
           </article>
@@ -41,13 +55,7 @@ const Home = () => {
           ))}
           <button className="bg-white text-black rounded px-4 py-2 mt-4" onClick={() => router.push("/posts")}>See all posts</button>
         </ul>
-
-
-
-
-
       </div>
-
     </div>
   );
 }

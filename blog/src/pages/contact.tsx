@@ -1,19 +1,32 @@
-import { address } from '@/data';
+
+import { type Address, getAddress } from '@/api/address';
+import { GetStaticProps } from 'next';
 import React from 'react';
 
-const Contact = () => {
+interface ContactProps {
+    address: Address
+}
 
+export const getStaticProps : GetStaticProps<ContactProps> = async() => {
+    let address = await getAddress();
+    return {
+        props: {
+            address: address
+        }
+    }
+}
+
+const Contact = ({address} : ContactProps) => {
     return (
         <div>
-            
             <div className="w-full mb-10 bg-gradient-to-t from-gray-700 to-gray-900 rounded-md p-10 mt-10">
-                <p className="text-white text-2xl">
-                    {address.map((line, index) => (
+                <div className="text-white text-2xl">
+                    {address.address.map((line, index) => (
                         <p key={index}>{line}</p>
                     ))}
-                </p>
+                </div>
             </div>
-            <img src="/map.png" className="w-full" />
+            <img src={address.mapUrl} className="w-full" />
         </div>
     );
 }

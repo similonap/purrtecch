@@ -1,11 +1,41 @@
-import { posts } from '@/data';
+import { getPostById, getPosts, type Post } from '@/api/posts';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+import { ParsedUrlQuery } from 'querystring';
 
-const Post = () => {
+interface PostProps {
+    post: Post
+}
+
+interface Paths extends ParsedUrlQuery { 
+    id: string
+}
+
+export const getStaticPaths: GetStaticPaths<Paths> = async () => {
+    let posts = await getPosts();
+    let paths = posts.map(post => ({
+        params: {
+            id: post.id.toString()
+        }
+    }));
+    return {
+        paths: paths,
+        fallback: false
+    }
+}
+
+export const getStaticProps: GetStaticProps<PostProps, Paths> = async (context) => {
+    let id = parseInt(context.params?.id as string);
+    let post = (await getPostById(id))!;
+    return {
+        props: {
+            post: post
+        }
+    }
+}
+
+const Post = ({post} : PostProps) => {
     const router = useRouter();
-    const id = parseInt(router.query.id as string);
-    let post = posts.find(post => post.id === id)!;
-
     return (
         <div>
             <article className="border rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
