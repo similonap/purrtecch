@@ -1,8 +1,10 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const App = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
   return (
     <div className="flex flex-col h-screen justify-between">
       <header className="bg-gray-800 text-white p-4">
@@ -22,7 +24,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </header>
 
       <main className="container mx-auto p-4 flex-grow">
-        <Component {...pageProps} />
+        <Component {...pageProps} key={router.route}/>
       </main>
 
       <footer className="bg-gray-700 text-white text-center p-4">

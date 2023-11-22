@@ -37,6 +37,14 @@ const Home = ({posts} : HomeProps) => {
         {posts.slice(0, 2).map(post => (
           <article key={post.id} className="border rounded-lg overflow-hidden">
             <img src={post.image} alt={post.title} className="w-full object-cover" />
+            
+            <div className="flex items-center px-4 py-2">
+              <img src={post.author.image} alt={post.author.name} className="w-10 h-10 rounded-full mr-4" />
+              <div>
+                <p className="text-sm font-bold">{post.author.name}</p>
+                <p className="text-sm">{new Date(post.date).toLocaleDateString('nl-BE')}</p>
+              </div>
+            </div>
             <div className="p-4">
               <h2 className="text-xl font-bold">{post.title}</h2>
               <p>{post.short}</p>
