@@ -1,6 +1,6 @@
 import { type StaffMember, getStaff } from "@/api/staff"
 import { GetStaticProps } from "next";
-import Link from "next/link";
+import Image from 'next/image'
 import { useRouter } from 'next/router';
 import React from 'react';
 
@@ -30,7 +30,7 @@ const Staff = ({staff} : StaffProps) => {
                     {staff.map(staff => (
                         <div className="items-center bg-gray-50 rounded-lg shadow sm:flex transition ease-in-out duration-200 hover:scale-110 cursor-pointer"  onClick={() => router.push("/staff/" + staff.id)}>
                             <div>
-                                <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={staff.image} />
+                                <Image alt="staff image" className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={staff.image} />
                             </div>
                             <div className="p-5 w-full">
                                 <h3 className="text-xl font-bold tracking-tight text-gray-900">

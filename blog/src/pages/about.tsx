@@ -1,5 +1,6 @@
 import { CampusInfo, getCampusInfo } from '@/api/campusInfo';
 import { GetStaticProps } from 'next';
+import Image from 'next/image'
 import React from 'react';
 
 interface AboutProps {
@@ -20,7 +21,7 @@ const About = ({ campusInfo }: AboutProps) => {
     return (
         <div>
             <div className="flex flex-col md:flex-row items-center md:items-start">
-                <img src="/purrtecch.png" alt="PurrTech University Logo" className="w-full md:w-1/4" />
+                <Image src="/purrtecch.png" alt="PurrTech University Logo" className="w-full md:w-1/4" />
 
                 <div className="md:w-3/4 p-4">
                     <h1 className="text-2xl font-bold mb-4 text-justify">About PurrTech University</h1>
@@ -32,7 +33,7 @@ const About = ({ campusInfo }: AboutProps) => {
 
             {campusInfo.map((line, index) => (
                 <div className="w-full rounded overflow-hidden shadow-lg text-black border-gray border-2 mt-10">
-                    <img src={line.cover} className="w-full object-cover" />
+                    <Image alt="cover" src={line.cover} className="w-full object-cover" />
                     <div className="p-10">
                         <h2 className="text-2xl font-bold mb-4 text-black">{line.title}</h2>
                         <p className="text-black text-lg">

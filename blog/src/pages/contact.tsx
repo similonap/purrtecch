@@ -2,6 +2,7 @@
 import { type Address, getAddress } from '@/api/address';
 import { GetStaticProps } from 'next';
 import React from 'react';
+import Image from 'next/image'
 
 interface ContactProps {
     address: Address
@@ -26,7 +27,7 @@ const Contact = ({address} : ContactProps) => {
                     ))}
                 </div>
             </div>
-            <img src={address.mapUrl} className="w-full" />
+            <Image src={address.mapUrl} className="w-full" alt="map"/>
         </div>
     );
 }

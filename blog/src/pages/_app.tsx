@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Link from 'next/link';
+import Image from 'next/image'
 import { useRouter } from 'next/router';
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -11,7 +12,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     
         <nav className="container mx-auto flex justify-between h-32">
           <div className="flex flex-row gap-4 items-center">
-            <img src="/logo.png" width="150" height="150" />
+            <Image src="/logo.png" width="150" height="150" alt={''} />
             <Link href="/" className="text-3xl font-bold">PurrTecch University</Link>
           </div>
           <div>

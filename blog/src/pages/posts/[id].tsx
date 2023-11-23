@@ -2,6 +2,7 @@ import { getPostById, getPosts, type Post } from '@/api/posts';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { ParsedUrlQuery } from 'querystring';
+import Image from 'next/image'
 
 interface PostProps {
     post: Post
@@ -39,7 +40,7 @@ const Post = ({post} : PostProps) => {
     return (
         <div>
             <article className="border rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <img src={post.image} alt={post.title} className="w-full h-100 object-cover" />
+                <Image src={post.image} alt={post.title} className="w-full h-100 object-cover" />
                 <div className="p-6">
                     <h2 className="text-2xl font-bold mb-2">{post.title}</h2>
                     <p className="text-gray-700 text-base">{post.fullText}</p>
