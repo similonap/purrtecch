@@ -30,7 +30,7 @@ const Staff = ({staff} : StaffProps) => {
                     {staff.map(staff => (
                         <div className="items-center bg-gray-50 rounded-lg shadow sm:flex transition ease-in-out duration-200 hover:scale-110 cursor-pointer"  onClick={() => router.push("/staff/" + staff.id)}>
                             <div>
-                                <Image alt="staff image" className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={staff.image} />
+                                <img alt="staff image" className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src={staff.image} />
                             </div>
                             <div className="p-5 w-full">
                                 <h3 className="text-xl font-bold tracking-tight text-gray-900">

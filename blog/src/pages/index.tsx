@@ -7,6 +7,7 @@ import React from 'react';
 
 export const getStaticProps : GetStaticProps<HomeProps> = async() => { 
   let posts = await getPosts();
+  posts = posts.map(post => ({...post, date: new Date(post.date).toLocaleDateString('nl-BE')}))
   return {
     props: {
       posts: posts
@@ -24,7 +25,7 @@ const Home = ({posts} : HomeProps) => {
   return (
     <div>
       <div className="flex flex-col md:flex-row items-center md:items-start">
-        <Image src="/purrtecch.png" alt="PurrTech University Logo" className="w-full md:w-1/4" />
+        <img src="/purrtecch.png" alt="PurrTech University Logo" className="w-full md:w-1/4" />
 
         <div className="md:w-3/4 p-4">
           <h1 className="text-2xl font-bold mb-4 text-justify">Welcome to PurrTech University</h1>
@@ -37,13 +38,13 @@ const Home = ({posts} : HomeProps) => {
       <div className="grid md:grid-cols-2 gap-4">
         {posts.slice(0, 2).map(post => (
           <article key={post.id} className="border rounded-lg overflow-hidden">
-            <Image src={post.image} alt={post.title} className="w-full object-cover" placeholder="" />
+            <img src={post.image} alt={post.title} className="w-full object-cover" placeholder="" />
             
             <div className="flex items-center px-4 py-2">
-              <Image src={post.author.image} alt={post.author.name} className="w-10 h-10 rounded-full mr-4" />
+              <img src={post.author.image} alt={post.author.name} className="w-10 h-10 rounded-full mr-4" />
               <div>
                 <p className="text-sm font-bold">{post.author.name}</p>
-                <p className="text-sm">{new Date(post.date).toLocaleDateString('nl-BE')}</p>
+                <p className="text-sm">{post.date}</p>
               </div>
             </div>
             <div className="p-4">

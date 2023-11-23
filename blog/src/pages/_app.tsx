@@ -12,7 +12,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     
         <nav className="container mx-auto flex justify-between h-32">
           <div className="flex flex-row gap-4 items-center">
-            <Image src="/logo.png" width="150" height="150" alt={''} />
+            <img src="/logo.png" width="150" height="150" alt={''} />
             <Link href="/" className="text-3xl font-bold">PurrTecch University</Link>
           </div>
           <div>

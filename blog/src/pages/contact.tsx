@@ -27,7 +27,7 @@ const Contact = ({address} : ContactProps) => {
                     ))}
                 </div>
             </div>
-            <Image src={address.mapUrl} className="w-full" alt="map"/>
+            <img src={address.mapUrl} className="w-full" alt="map"/>
         </div>
     );
 }

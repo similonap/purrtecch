@@ -21,7 +21,7 @@ const About = ({ campusInfo }: AboutProps) => {
     return (
         <div>
             <div className="flex flex-col md:flex-row items-center md:items-start">
-                <Image src="/purrtecch.png" alt="PurrTech University Logo" className="w-full md:w-1/4" />
+                <img src="/purrtecch.png" alt="PurrTech University Logo" width="150" height="150" className="w-full md:w-1/4" />
 
                 <div className="md:w-3/4 p-4">
                     <h1 className="text-2xl font-bold mb-4 text-justify">About PurrTech University</h1>
@@ -33,7 +33,7 @@ const About = ({ campusInfo }: AboutProps) => {
 
             {campusInfo.map((line, index) => (
                 <div className="w-full rounded overflow-hidden shadow-lg text-black border-gray border-2 mt-10">
-                    <Image alt="cover" src={line.cover} className="w-full object-cover" />
+                    <img alt="cover" src={line.cover} className="w-full object-cover" />
                     <div className="p-10">
                         <h2 className="text-2xl font-bold mb-4 text-black">{line.title}</h2>
                         <p className="text-black text-lg">
