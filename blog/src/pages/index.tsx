@@ -37,7 +37,7 @@ const Home = ({posts} : HomeProps) => {
       <div className="grid md:grid-cols-2 gap-4">
         {posts.slice(0, 2).map(post => (
           <article key={post.id} className="border rounded-lg overflow-hidden">
-            <Image src={post.image} alt={post.title} className="w-full object-cover" />
+            <Image src={post.image} alt={post.title} className="w-full object-cover" placeholder="" />
             
             <div className="flex items-center px-4 py-2">
               <Image src={post.author.image} alt={post.author.name} className="w-10 h-10 rounded-full mr-4" />
