@@ -15,7 +15,7 @@ const posts = [
         "id": 1,
         "title": "Feline Physics: Unraveling the Mystery of Cat Leaps",
         "short": "Understanding the astounding agility and physics behind cat jumps.",
-        "fullText": "# Feline Physics: <p><div>test</div></p> Unraveling the Mystery of Cat Leaps\n\nIn this **fascinating study**, **Purrtecch University’s physics department** examines the biomechanics and physical principles behind the **extraordinary jumping abilities of cats**. Using high-speed cameras and motion analysis technology, our cat scientists reveal the secrets of **feline agility** and how it can inspire advancements in **robotics and biomechanics**.",
+        "fullText": "# Feline Physics: Unraveling the Mystery of Cat Leaps\n\nIn this **fascinating study**, **Purrtecch University’s physics department** examines the biomechanics and physical principles behind the **extraordinary jumping abilities of cats**. Using high-speed cameras and motion analysis technology, our cat scientists reveal the secrets of **feline agility** and how it can inspire advancements in **robotics and biomechanics**.",
         "date": "2023-10-10T23:45:00.000Z",
         "image": "/blog-id-1.png",
         "author": staff[0]
