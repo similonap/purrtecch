@@ -28,7 +28,6 @@ export const getStaticProps: GetStaticProps<StaffProps, Paths> = async (context)
     let id = parseInt(context.params?.id as string);
     let staffMember = (await getStaffMemberById(id))!;
 
-    console.log(staffMember);
     return {
         props: {
             staffMember: staffMember
