@@ -32,7 +32,7 @@ const About = ({ campusInfo }: AboutProps) => {
             </div>
 
             {campusInfo.map((line, index) => (
-                <div className="w-full rounded overflow-hidden shadow-lg text-black border-gray border-2 mt-10">
+                <div key={index} className="w-full rounded overflow-hidden shadow-lg text-black border-gray border-2 mt-10">
                     <img alt="cover" src={line.cover} className="w-full object-cover" />
                     <div className="p-10">
                         <h2 className="text-2xl font-bold mb-4 text-black">{line.title}</h2>
