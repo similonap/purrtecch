@@ -18,7 +18,7 @@ const posts = [
         "image": "/blog-id-1.png",
         "fullText": "# Feline Physics: Unraveling the Mystery of Cat Leaps\n\n![Feline Physics](/blog-id-1.png)\n\nIn this **fascinating study**, **Purrtecch University’s physics department** examines the biomechanics and physical principles behind the **extraordinary jumping abilities of cats**. Using high-speed cameras and motion analysis technology, our cat scientists reveal the secrets of **feline agility** and how it can inspire advancements in **robotics and biomechanics**.",
         "date": "2023-10-10T23:45:00.000Z",
-        "author": "staff[0]"
+        "author": staff[0]
     },
     {
         "id": 2,
@@ -27,7 +27,7 @@ const posts = [
         "image": "/blog-id-2.png",
         "fullText": "# The Purrfect Chemistry: Catnip and Feline Behavior\n\n![Catnip and Cats](/blog-id-2.png)\n\nJoin our **cat chemists** as they delve into the **compounds of catnip** and their effects on **feline behavior**. This article discusses the neurochemical reactions caused by catnip, providing a unique perspective on how certain substances can **alter animal behavior**.",
         "date": "2023-10-11T23:45:00.000Z",
-        "author": "staff[1]"
+        "author": staff[1]
     },
     {
         "id": 3,
@@ -36,7 +36,7 @@ const posts = [
         "image": "/blog-id-3.png",
         "fullText": "# Whisker Technology: Sensory Innovation Inspired by Cats\n\n![Whisker Tech](/blog-id-3.png)\n\n**Purrtecch University’s engineering department** presents groundbreaking research on **bio-inspired sensors** modeled after cat whiskers. Learn about how the sensitivity and functionality of cat whiskers are being mimicked to develop advanced tactile sensors for robots, enhancing their ability to **navigate and interact** with their environment.",
         "date": "2023-10-12T23:45:00.000Z",
-        "author": "staff[2]"
+        "author": staff[2]
     },
     {
         "id": 4,
@@ -45,7 +45,7 @@ const posts = [
         "image": "/blog-id-4.png",
         "fullText": "# Meowlogies: Understanding Cat Communication\n\n![Cat Communication](/blog-id-4.png)\n\nIn this **intriguing research**, **Purrtecch University’s linguistics and animal behavior experts** investigate the various forms of **cat communication**. From vocalizations to body language, this comprehensive study provides insight into how cats convey **messages and emotions**, offering a deeper understanding of **interspecies communication**.",
         "date": "2023-10-13T23:45:00.000Z",
-        "author": "staff[3]"
+        "author": staff[3]
     },
     {
         "id": 5,
@@ -54,7 +54,7 @@ const posts = [
         "image": "/blog-id-5.png",
         "fullText": "# Catronomy: Feline Perspectives on the Cosmos\n\n![Catronomy](/blog-id-5.png)\n\nExplore the universe through the **eyes of cats** in this innovative research from **Purrtecch University’s astronomy department**. Utilizing the superior night vision of cats, our feline astronomers provide unique observations of celestial bodies and phenomena, shedding new light on the **mysteries of space**.",
         "date": "2023-10-14T23:45:00.000Z",
-        "author": "staff[4]"
+        "author": staff[4]
     }
 ]
 
